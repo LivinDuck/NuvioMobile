@@ -78,8 +78,9 @@ const DEFAULT_HEADERS: Record<string, string> = {
 };
 
 const PREFERRED_ADAPTIVE_CLIENT = 'android_vr';
-const REQUEST_TIMEOUT_MS = 12000;       // player API + HLS manifest requests
-const WATCH_PAGE_TIMEOUT_MS = 5000;    // watch page scrape — best-effort only
+const REQUEST_TIMEOUT_MS = 6000;        // player API + HLS manifest requests
+const WATCH_PAGE_TIMEOUT_MS = 3000;    // watch page scrape — best-effort only
+const MAX_RETRIES = 2;                  // retry extraction up to 2 times on total failure
 
 interface ClientDef {
   key: string;
@@ -535,10 +536,28 @@ export class YouTubeExtractor {
     }
 
     const effectivePlatform = platform ?? (Platform.OS === 'android' ? 'android' : 'ios');
+
+    for (let attempt = 1; attempt <= MAX_RETRIES + 1; attempt++) {
+      if (attempt > 1) {
+        const delay = attempt * 300;
+        logger.info('YouTubeExtractor', `Retry attempt ${attempt}/${MAX_RETRIES + 1} after ${delay}ms`);
+        await new Promise(resolve => setTimeout(resolve, delay));
+      }
+      const result = await this.extractOnce(videoId, effectivePlatform);
+      if (result) return result;
+      logger.warn('YouTubeExtractor', `Attempt ${attempt} failed for videoId=${videoId}`);
+    }
+
+    logger.warn('YouTubeExtractor', `All ${MAX_RETRIES + 1} attempts failed for videoId=${videoId}`);
+    return null;
+  }
+
+  private static async extractOnce(
+    videoId: string,
+    effectivePlatform: 'android' | 'ios',
+  ): Promise<YouTubeExtractionResult | null> {
     logger.info('YouTubeExtractor', `Extracting videoId=${videoId} platform=${effectivePlatform}`);
 
-    // Step 1: watch page for dynamic API key + visitor data (5s timeout, best-effort)
-    // Player API works without these — don't let a slow/blocked watch page stall everything
     const { apiKey, visitorData } = await fetchWatchConfig(videoId);
 
     // Step 2: collect formats from all clients
