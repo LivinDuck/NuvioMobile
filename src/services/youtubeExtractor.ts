@@ -78,7 +78,8 @@ const DEFAULT_HEADERS: Record<string, string> = {
 };
 
 const PREFERRED_ADAPTIVE_CLIENT = 'android_vr';
-const REQUEST_TIMEOUT_MS = 20000;
+const REQUEST_TIMEOUT_MS = 12000;       // player API + HLS manifest requests
+const WATCH_PAGE_TIMEOUT_MS = 5000;    // watch page scrape — best-effort only
 
 interface ClientDef {
   key: string;
@@ -243,7 +244,7 @@ interface WatchConfig {
 
 async function fetchWatchConfig(videoId: string): Promise<WatchConfig> {
   const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+  const timer = setTimeout(() => controller.abort(), WATCH_PAGE_TIMEOUT_MS);
   try {
     const res = await fetch(
       `https://www.youtube.com/watch?v=${videoId}&hl=en`,
@@ -536,7 +537,8 @@ export class YouTubeExtractor {
     const effectivePlatform = platform ?? (Platform.OS === 'android' ? 'android' : 'ios');
     logger.info('YouTubeExtractor', `Extracting videoId=${videoId} platform=${effectivePlatform}`);
 
-    // Step 1: watch page for dynamic API key + visitor data
+    // Step 1: watch page for dynamic API key + visitor data (5s timeout, best-effort)
+    // Player API works without these — don't let a slow/blocked watch page stall everything
     const { apiKey, visitorData } = await fetchWatchConfig(videoId);
 
     // Step 2: collect formats from all clients
