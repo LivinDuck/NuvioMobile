@@ -96,22 +96,6 @@ const ANDROID_VR_CLIENT_CONTEXT = {
   },
 };
 
-// ANDROID_SDKLESS — secondary fallback, no PO token needed, updated version.
-// Works for most non-age-restricted content.
-const ANDROID_CLIENT_CONTEXT = {
-  client: {
-    clientName: 'ANDROID',
-    clientVersion: '20.10.38',
-    androidSdkVersion: 30,
-    osName: 'Android',
-    osVersion: '11',
-    userAgent:
-      'com.google.android.youtube/20.10.38 (Linux; U; Android 11) gzip',
-    hl: 'en',
-    gl: 'US',
-  },
-};
-
 // TV client — no PO token needed, good format availability.
 const TV_CLIENT_CONTEXT = {
   client: {
@@ -524,12 +508,6 @@ export class YouTubeExtractor {
         clientNameId: '28',
         context: ANDROID_VR_CLIENT_CONTEXT,
         userAgent: 'com.google.android.apps.youtube.vr.oculus/1.60.19 (Linux; U; Android 12L; eureka-user Build/SQ3A.220605.009.A1) gzip',
-      },
-      {
-        name: 'ANDROID',
-        clientNameId: '3',
-        context: ANDROID_CLIENT_CONTEXT,
-        userAgent: 'com.google.android.youtube/20.10.38 (Linux; U; Android 11) gzip',
       },
       {
         name: 'TV',
