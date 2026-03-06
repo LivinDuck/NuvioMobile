@@ -1140,7 +1140,6 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({
         return;
       }
 
-      setTrailerUrl(null);
       setTrailerLoading(true);
       setTrailerError(false);
       setTrailerReady(false);
