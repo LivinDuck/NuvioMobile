@@ -29,6 +29,7 @@
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
 		F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11748412D0307B40044C1D9 /* AppDelegate.swift */; };
 		F285A1620F5847BA863124AF /* LiveActivity.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EF8716173E0148BD82B233B7 /* LiveActivity.appex */; };
+		797799D4F9144A9E8D2AB90D /* LiveActivity.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 49DDF70A2BBD4320BBD94B1B /* LiveActivity.appex */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,13 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0EA489F2BF6143F1BA7B8485;
+			remoteInfo = LiveActivity;
+		};
+		7A41A1F529994F0C8801F1A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EFB756D21A05453EA489278C;
 			remoteInfo = LiveActivity;
 		};
 /* End PBXContainerItemProxy section */
@@ -48,6 +56,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				797799D4F9144A9E8D2AB90D /* LiveActivity.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,6 +102,16 @@
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CC1B793274FE428D8531E950 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			name = "Embed Foundation Extensions";
+			dstPath = "";
+			dstSubfolderSpec = 13;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +147,7 @@
 		EF8716173E0148BD82B233B7 /* LiveActivity.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; fileEncoding = 9; includeInIndex = 0; path = LiveActivity.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		F11748412D0307B40044C1D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Nuvio/AppDelegate.swift; sourceTree = "<group>"; };
 		F11748442D0722820044C1D9 /* Nuvio-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Nuvio-Bridging-Header.h"; path = "Nuvio/Nuvio-Bridging-Header.h"; sourceTree = "<group>"; };
+		49DDF70A2BBD4320BBD94B1B /* LiveActivity.appex */ = {isa = PBXFileReference; name = "LiveActivity.appex"; path = "LiveActivity.appex"; sourceTree = BUILT_PRODUCTS_DIR; fileEncoding = undefined; lastKnownFileType = undefined; explicitFileType = wrapper.app-extension; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +160,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C105694FF46449959CE16947 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2537B59C29048BFB082D5F3 /* Embed Foundation Extensions */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -213,6 +240,7 @@
 				B9F3EB198DED443D980ADFB3 /* LiveActivity */,
 				C05E525650E143FB85ED7622 /* LiveActivity */,
 				D05210A39FF14E649D77F8A8 /* LiveActivity */,
+				2EAF711C6AB246A0A253E404 /* LiveActivity */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -224,6 +252,7 @@
 			children = (
 				13B07F961A680F5B00A75B9A /* Nuvio.app */,
 				EF8716173E0148BD82B233B7 /* LiveActivity.appex */,
+				49DDF70A2BBD4320BBD94B1B /* LiveActivity.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -295,6 +324,26 @@
 			name = Nuvio;
 			sourceTree = "<group>";
 		};
+		2EAF711C6AB246A0A253E404 /* LiveActivity */ = {
+			isa = PBXGroup;
+			children = (
+				8034143A77A946B5A793F967 /* Color+hex.swift */,
+				3A48D8A298DD48928E8D0A02 /* Date+toTimerInterval.swift */,
+				26957CDD392E4E9390811D0D /* Image+dynamic.swift */,
+				2F448294A36E433E924078C1 /* LiveActivityView.swift */,
+				AD48662BB71E4C9C9E340289 /* LiveActivityWidget.swift */,
+				A83D742B36224176A0AB3B25 /* LiveActivityWidgetBundle.swift */,
+				324373F393774A9CA40DE22E /* View+applyIfPresent.swift */,
+				373D1473F5A74CBC9DBD108B /* View+applyWidgetURL.swift */,
+				3396D68881EF486E99FD480A /* ViewHelpers.swift */,
+				0E13CE4BDE2F4555806AE753 /* Info.plist */,
+				0F1D0037D1F24E60BDB57628 /* Assets.xcassets */,
+				2DE29A8A87D24662BEFFF849 /* LiveActivity.entitlements */,
+			);
+			name = LiveActivity;
+			path = LiveActivity;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -333,16 +382,35 @@
 				571AD3FB23F14FC7BE6A1E44 /* Embed Foundation Extensions */,
 				13CD9594FB5C4FE4A6794089 /* Embed Foundation Extensions */,
 				F1058FE7710A45FABC0689A7 /* Embed Foundation Extensions */,
+				CC1B793274FE428D8531E950 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				8410CAE82E604DD1A187EDA2 /* PBXTargetDependency */,
+				523C5D7CB8E740A5A0BF4322 /* PBXTargetDependency */,
 			);
 			name = Nuvio;
 			productName = Nuvio;
 			productReference = 13B07F961A680F5B00A75B9A /* Nuvio.app */;
 			productType = "com.apple.product-type.application";
+		};
+		EFB756D21A05453EA489278C /* LiveActivity */ = {
+			isa = PBXNativeTarget;
+			name = LiveActivity;
+			productName = LiveActivity;
+			productReference = 49DDF70A2BBD4320BBD94B1B;
+			productType = "com.apple.product-type.app-extension";
+			buildConfigurationList = F11E3E24512A427FB847D2F6;
+			buildPhases = (
+				784E2472974841CD88391F31 /* Embed Foundation Extensions */,
+				A2537B59C29048BFB082D5F3 /* Embed Foundation Extensions */,
+				B06A5B524C284D9FAFC33F3C /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
 		};
 /* End PBXNativeTarget section */
 
@@ -362,6 +430,9 @@
 						LastSwiftMigration = 1250;
 						ProvisioningStyle = Automatic;
 					};
+					EFB756D21A05453EA489278C = {
+						LastSwiftMigration = 1250;
+					};
 				};
 			};
 			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Nuvio" */;
@@ -379,6 +450,7 @@
 			targets = (
 				13B07F861A680F5B00A75B9A /* Nuvio */,
 				0EA489F2BF6143F1BA7B8485 /* LiveActivity */,
+				EFB756D21A05453EA489278C /* LiveActivity */,
 			);
 		};
 /* End PBXProject section */
@@ -396,6 +468,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		1E668E0B92C34E73AECDBE1A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				730F1CE72F24B27100EF7E51 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B06A5B524C284D9FAFC33F3C /* Embed Foundation Extensions */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -649,6 +729,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		784E2472974841CD88391F31 /* Embed Foundation Extensions */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				730F1CDE2F24B27100EF7E51 /* "Color+hex.swift" in Sources */,
+				730F1CDF2F24B27100EF7E51 /* "Date+toTimerInterval.swift" in Sources */,
+				730F1CE02F24B27100EF7E51 /* "Image+dynamic.swift" in Sources */,
+				730F1CE12F24B27100EF7E51 /* LiveActivityView.swift in Sources */,
+				730F1CE22F24B27100EF7E51 /* LiveActivityWidget.swift in Sources */,
+				730F1CE32F24B27100EF7E51 /* LiveActivityWidgetBundle.swift in Sources */,
+				730F1CE42F24B27100EF7E51 /* "View+applyIfPresent.swift" in Sources */,
+				730F1CE52F24B27100EF7E51 /* "View+applyWidgetURL.swift" in Sources */,
+				730F1CE62F24B27100EF7E51 /* ViewHelpers.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -656,6 +752,11 @@
 			isa = PBXTargetDependency;
 			target = 0EA489F2BF6143F1BA7B8485 /* LiveActivity */;
 			targetProxy = 55A0DD628D7F4F4F88B4A001 /* PBXContainerItemProxy */;
+		};
+		523C5D7CB8E740A5A0BF4322 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EFB756D21A05453EA489278C /* LiveActivity */;
+			targetProxy = 7A41A1F529994F0C8801F1A5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -690,7 +791,7 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nuvio.hub;
-				PRODUCT_NAME = Nuvio;
+				PRODUCT_NAME = "Nuvio";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Nuvio/Nuvio-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -725,7 +826,7 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nuvio.hub;
-				PRODUCT_NAME = Nuvio;
+				PRODUCT_NAME = "Nuvio";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Nuvio/Nuvio-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -900,6 +1001,46 @@
 			};
 			name = Release;
 		};
+		B062D46778AF40DE92953986 /* Debug */ = {
+			name = Debug;
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				INFOPLIST_FILE = LiveActivity/Info.plist;
+				CURRENT_PROJECT_VERSION = "37";
+				IPHONEOS_DEPLOYMENT_TARGET = "16.2";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nuvio.hub.LiveActivity";
+				GENERATE_INFOPLIST_FILE = "YES";
+				INFOPLIST_KEY_CFBundleDisplayName = LiveActivity;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				MARKETING_VERSION = "1.4.1";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				CODE_SIGN_ENTITLEMENTS = "LiveActivity/LiveActivity.entitlements";
+				APPLICATION_EXTENSION_API_ONLY = "YES";
+			};
+		};
+		67617475B4F443CBBCE1A6FD /* Release */ = {
+			name = Release;
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				INFOPLIST_FILE = LiveActivity/Info.plist;
+				CURRENT_PROJECT_VERSION = "37";
+				IPHONEOS_DEPLOYMENT_TARGET = "16.2";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nuvio.hub.LiveActivity";
+				GENERATE_INFOPLIST_FILE = "YES";
+				INFOPLIST_KEY_CFBundleDisplayName = LiveActivity;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				MARKETING_VERSION = "1.4.1";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				CODE_SIGN_ENTITLEMENTS = "LiveActivity/LiveActivity.entitlements";
+				APPLICATION_EXTENSION_API_ONLY = "YES";
+			};
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -926,6 +1067,15 @@
 			buildConfigurations = (
 				3DCEA1FBF99E46F58A7150CC /* Debug */,
 				E4108F64486C48E192EAA45D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F11E3E24512A427FB847D2F6 /* Build configuration list for PBXNativeTarget "LiveActivity" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B062D46778AF40DE92953986 /* Debug */,
+				67617475B4F443CBBCE1A6FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
